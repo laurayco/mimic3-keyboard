@@ -1,0 +1,20 @@
+[package]
+name = "mimic3-keyboard"
+version = "0.1.0"
+edition = "2021"
+about = "Sends line-terminated input to a Mimic3 API host then plays the resulting audio on the default audio device."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+urlencoding = "2.1.2"
+clap = {version="4.0.29", features=["derive"]}
+rodio="0.16.0"
+hyper = { version = "0.14", features = ["full"] }
+tokio = { version = "1", features = ["full"] }
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
